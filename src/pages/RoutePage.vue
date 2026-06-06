@@ -112,7 +112,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { calculateRoutes } from '../utils/routeCalculator.js'
-import { setLastNavigation, getFavorites, addFavorite, removeFavorite, getSettings } from '../utils/storage.js'
+import { setLastNavigation, getFavorites, addFavorite, removeFavorite, getSettings, addHistory } from '../utils/storage.js'
 
 const route = useRoute()
 const loading = ref(true)
@@ -142,6 +142,12 @@ async function loadRoute() {
       departmentId: deptId,
       department: result.value.department,
       routes: result.value.routes
+    })
+    
+    addHistory({
+      departmentId: deptId,
+      department: result.value.department,
+      options: result.value.options
     })
   }
   

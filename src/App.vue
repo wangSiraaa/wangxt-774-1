@@ -7,6 +7,9 @@
           <router-link to="/search" class="nav-link" active-class="active">
             🔍 搜索
           </router-link>
+          <router-link to="/history" class="nav-link" active-class="active">
+            📋 历史
+          </router-link>
           <router-link to="/favorites" class="nav-link" active-class="active">
             ⭐ 收藏
           </router-link>
